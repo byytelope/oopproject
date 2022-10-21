@@ -33,7 +33,7 @@
                   <Insets bottom="24.0" />
                </VBox.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Help save the world one word at a time.">
+            <Text fx:id="loginText" strokeType="OUTSIDE" strokeWidth="0.0" text="Help save the world one word at a time.">
                <VBox.margin>
                   <Insets bottom="24.0" />
                </VBox.margin>
@@ -48,7 +48,7 @@
             <TextFlow prefWidth="200.0">
                <children>
                   <Text fill="#575757" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Not a member yet?" />
-                  <Hyperlink fx:id="registerText" onAction="#switchToRegister" style="-fx-font-size: 12;" text="Register" />
+                  <Hyperlink fx:id="registerLink" onAction="#switchToRegister" style="-fx-font-size: 12;" text="Register" />
                </children>
             </TextFlow>
          </children>

@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class LoginController {
@@ -26,10 +27,16 @@ public class LoginController {
     private Button registerButton;
 
     @FXML
-    private Hyperlink signInText;
+    private Text loginText;
 
     @FXML
-    private Hyperlink registerText;
+    private Text registerText;
+
+    @FXML
+    private Hyperlink signInLink;
+
+    @FXML
+    private Hyperlink registerLink;
 
     @FXML
     private TextField loginEmailField;
@@ -45,6 +52,11 @@ public class LoginController {
 
     @FXML
     private TextField confirmPasswordField;
+
+    protected void setError(Text textObj, String errorText) {
+        textObj.setText(errorText);
+        textObj.setStyle("-fx-fill: maroon");
+    }
 
     public void switchToLogin(ActionEvent e) throws IOException {
         root = FXMLLoader.load(getClass().getResource("login.fxml"));
@@ -63,11 +75,28 @@ public class LoginController {
     }
 
     public void signInAction(ActionEvent e) {
-        System.out.println("Logged in");
+        boolean invalidCreds = loginEmailField.getText().isBlank()
+                || loginPasswordField.getText().isBlank();
+
+        if (invalidCreds) {
+            setError(loginText, "Invalid credentials. Please try again");
+        } else {
+            System.out.println("Logged in");
+        }
     }
 
     public void registerAction(ActionEvent e) {
-        System.out.println("Registered");
+        boolean emailInvalid = registerEmailField.getText().isBlank();
+
+        if (emailInvalid) {
+            setError(registerText, "Please enter a valid email");
+        } else if (registerPasswordField.getText().length() < 8) {
+            setError(registerText, "Password must atleast 8 characters long");
+        } else if (!confirmPasswordField.getText().equals(registerPasswordField.getText())) {
+            setError(registerText, "Passwords do not match");
+        } else {
+            System.out.println("Registered");
+        }
     }
 
 }
