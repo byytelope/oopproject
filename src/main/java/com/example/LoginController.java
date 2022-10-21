@@ -74,7 +74,7 @@ public class LoginController {
         stage.show();
     }
 
-    public void signInAction(ActionEvent e) {
+    public void signInAction(ActionEvent e) throws IOException {
         boolean invalidCreds = loginEmailField.getText().isBlank()
                 || loginPasswordField.getText().isBlank();
 
@@ -82,6 +82,11 @@ public class LoginController {
             setError(loginText, "Invalid credentials. Please try again");
         } else {
             System.out.println("Logged in");
+            root = FXMLLoader.load(getClass().getResource("home.fxml"));
+            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
         }
     }
 
