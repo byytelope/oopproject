@@ -91,7 +91,7 @@ public class LoginController {
         if (emailInvalid) {
             setError(registerText, "Please enter a valid email");
         } else if (registerPasswordField.getText().length() < 8) {
-            setError(registerText, "Password must atleast 8 characters long");
+            setError(registerText, "Password must be atleast 8 characters long");
         } else if (!confirmPasswordField.getText().equals(registerPasswordField.getText())) {
             setError(registerText, "Passwords do not match");
         } else {
