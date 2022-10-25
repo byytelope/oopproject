@@ -1,10 +1,13 @@
 package com.example;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,7 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class LoginController {
+public class LoginController implements Initializable {
 
     private Stage stage;
     private Scene scene;
@@ -52,6 +55,12 @@ public class LoginController {
 
     @FXML
     private TextField confirmPasswordField;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        // TODO Auto-generated method stub
+
+    }
 
     protected void setError(Text textObj, String errorText) {
         textObj.setText(errorText);

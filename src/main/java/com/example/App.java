@@ -16,8 +16,11 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        String cssPath = getClass().getResource("styles.css").toExternalForm();
         Parent loginRoot = FXMLLoader.load(getClass().getResource("login.fxml"));
         Scene loginScene = new Scene(loginRoot);
+
+        loginScene.getStylesheets().add(cssPath);
 
         stage.setResizable(false);
         stage.setTitle("Ribbit");

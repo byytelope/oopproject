@@ -41,7 +41,7 @@
             <TextField fx:id="registerEmailField" prefHeight="30.0" prefWidth="200.0" promptText="Email" style="-fx-background-radius: 0; -fx-background-color: #f5f5f5;" />
             <PasswordField fx:id="registerPasswordField" prefHeight="32.0" prefWidth="200.0" promptText="Password" style="-fx-background-radius: 0; -fx-background-color: #f5f5f5;" />
             <PasswordField fx:id="confirmPasswordField" layoutX="166.0" layoutY="319.0" prefHeight="32.0" prefWidth="200.0" promptText="Confirm Password" style="-fx-background-radius: 0; -fx-background-color: #f5f5f5;" />
-            <Button fx:id="registerButton" mnemonicParsing="false" onAction="#registerAction" prefHeight="32.0" prefWidth="200.0" style="-fx-background-radius: 0; -fx-background-color: #252525; -fx-text-fill: #fff;" text="Register">
+            <Button fx:id="registerButton" defaultButton="true" mnemonicParsing="false" onAction="#registerAction" prefHeight="32.0" prefWidth="200.0" style="-fx-background-radius: 0; -fx-background-color: #252525; -fx-text-fill: #fff;" text="Register">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
