@@ -62,7 +62,7 @@ public class LoginController implements Initializable {
 
     }
 
-    protected void setError(Text textObj, String errorText) {
+    private void setError(Text textObj, String errorText) {
         textObj.setText(errorText);
         textObj.setStyle("-fx-fill: maroon");
     }
@@ -84,6 +84,8 @@ public class LoginController implements Initializable {
     }
 
     public void signInAction(ActionEvent e) throws IOException {
+        // MOCK
+
         boolean invalidCreds = loginEmailField.getText().isBlank()
                 || loginPasswordField.getText().isBlank();
 
@@ -100,6 +102,8 @@ public class LoginController implements Initializable {
     }
 
     public void registerAction(ActionEvent e) {
+        // MOCK
+
         boolean emailInvalid = registerEmailField.getText().isBlank();
 
         if (emailInvalid) {
