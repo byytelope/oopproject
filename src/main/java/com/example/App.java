@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class App extends Application {
 
@@ -24,8 +25,10 @@ public class App extends Application {
 
         stage.setResizable(false);
         stage.setTitle("Ribbit");
+        stage.initStyle(StageStyle.UTILITY);
         stage.setScene(loginScene);
         stage.show();
     }
 
 }
+// #468189
