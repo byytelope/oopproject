@@ -84,7 +84,7 @@ public class LoginController implements Initializable {
     }
 
     public void signInAction(ActionEvent e) throws IOException {
-        // MOCK
+        // TODO: MOCK
 
         boolean invalidCreds = loginEmailField.getText().isBlank()
                 || loginPasswordField.getText().isBlank();
@@ -102,7 +102,7 @@ public class LoginController implements Initializable {
     }
 
     public void registerAction(ActionEvent e) {
-        // MOCK
+        // TODO: MOCK
 
         boolean emailInvalid = registerEmailField.getText().isBlank();
 
