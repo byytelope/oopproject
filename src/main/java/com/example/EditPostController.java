@@ -12,45 +12,27 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-public class SettingsController implements Initializable {
+public class EditPostController implements Initializable {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
 
     @FXML
-    private Circle avatar;
-
-    @FXML
-    private Button avatarBrowseButton;
-
-    @FXML
-    private Button avatarConfirmButton;
-
-    @FXML
-    private Button usernameConfirmButton;
-
-    @FXML
-    private Button passwordConfirmButton;
-
-    @FXML
     private Button cancelButton;
 
     @FXML
-    private TextField usernameField;
+    private Button confirmButton;
 
     @FXML
-    private TextField currentPasswordField;
+    private TextField titleField;
 
     @FXML
-    private TextField newPasswordField;
-
-    @FXML
-    private TextField confirmPasswordField;
+    private TextArea postContentArea;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -59,6 +41,16 @@ public class SettingsController implements Initializable {
     }
 
     public void cancelAction(ActionEvent e) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("home.fxml"));
+        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void confirmAction(ActionEvent e) throws IOException {
+        // TODO: MOCK
+
         root = FXMLLoader.load(getClass().getResource("home.fxml"));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         scene = new Scene(root);

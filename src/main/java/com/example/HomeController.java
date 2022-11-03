@@ -13,7 +13,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -24,9 +23,6 @@ public class HomeController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
-
-    @FXML
-    private ScrollPane scrollPane;
 
     @FXML
     private TextField searchBar;
@@ -45,9 +41,6 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        this.scrollPane.setFitToWidth(true);
-        this.scrollPane.setStyle("-fx-background: rgb(255,255,255);\n -fx-background-color: rgb(255,255,255)");
-
         int rows = 0;
 
         try {

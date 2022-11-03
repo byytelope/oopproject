@@ -13,11 +13,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class PostCardController implements Initializable {
+public class PostController implements Initializable {
 
     private Stage stage;
     private Scene scene;
@@ -29,13 +30,13 @@ public class PostCardController implements Initializable {
     private String date = "10.09.2022";
 
     @FXML
+    private Button backButton;
+
+    @FXML
     private Button upvoteButton;
 
     @FXML
     private Button downvoteButton;
-
-    @FXML
-    private Button viewButton;
 
     @FXML
     private Button editButton;
@@ -47,13 +48,13 @@ public class PostCardController implements Initializable {
     private Circle authorAvatar;
 
     @FXML
-    private Label titleLabel;
-
-    @FXML
-    private Label contentLabel;
-
-    @FXML
     private Label dateLabel;
+
+    @FXML
+    private Text titleText;
+
+    @FXML
+    private Text contentText;
 
     @FXML
     private Text authorNameText;
@@ -61,13 +62,16 @@ public class PostCardController implements Initializable {
     @FXML
     private Text votesText;
 
+    @FXML
+    private TextField commentField;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // TODO: MOCK
 
         votesText.setText(String.valueOf(this.votes));
-        titleLabel.setText(this.title);
-        contentLabel.setText(this.content);
+        titleText.setText(this.title);
+        contentText.setText(this.content);
         authorNameText.setText(this.authorName);
         dateLabel.setText(this.date);
 
@@ -87,10 +91,10 @@ public class PostCardController implements Initializable {
         votesText.setText(String.valueOf(this.votes));
     }
 
-    public void viewAction(ActionEvent e) throws IOException {
+    public void backAction(ActionEvent e) throws IOException {
         // TODO: MOCK
 
-        root = FXMLLoader.load(getClass().getResource("post.fxml"));
+        root = FXMLLoader.load(getClass().getResource("home.fxml"));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

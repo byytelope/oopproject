@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -24,9 +25,10 @@ public class App extends Application {
 
         stage.setResizable(false);
         stage.setTitle("Ribbit");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("globe.png")));
         stage.setScene(loginScene);
         stage.show();
     }
 
 }
-// #468189 #B9EBD4 #F4F1E3
+// #B9EBD4 #F4F1E3 #F9BBB4 #F9BF7F

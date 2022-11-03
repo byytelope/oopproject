@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="1024.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.NewPostController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="1024.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.EditPostController">
    <center>
       <VBox alignment="CENTER" maxWidth="500.0" prefWidth="500.0" spacing="12.0" BorderPane.alignment="CENTER">
          <children>
@@ -21,7 +21,7 @@
    <top>
       <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Create a new post">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Edit post">
                <font>
                   <Font size="24.0" />
                </font>
@@ -32,7 +32,7 @@
    <bottom>
       <HBox alignment="CENTER_LEFT" maxWidth="500.0" prefHeight="80.0" prefWidth="500.0" spacing="12.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="postButton" mnemonicParsing="false" onAction="#postAction" prefHeight="32.0" prefWidth="500.0" style="-fx-background-color: #B9EBD4; -fx-background-radius: 6;" text="Post" />
+            <Button fx:id="confirmButton" mnemonicParsing="false" onAction="#confirmAction" prefHeight="32.0" prefWidth="500.0" style="-fx-background-color: #B9EBD4; -fx-background-radius: 6;" text="Confirm" />
             <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelAction" prefHeight="32.0" prefWidth="500.0" style="-fx-background-color: #F9BBB4; -fx-background-radius: 6;" text="Cancel" />
          </children>
       </HBox>

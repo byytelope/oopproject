@@ -24,7 +24,7 @@
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
                      <image>
-                        <Image url="@pencil.png" />
+                        <Image url="@plus.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -58,7 +58,7 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
          <children>
-            <ScrollPane fx:id="scrollPane" prefHeight="503.0" prefWidth="944.0">
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="503.0" prefWidth="944.0" style="-fx-background-color: #fff; -fx-background: #fff;">
                <content>
                   <GridPane fx:id="postsGrid" hgap="24.0" style="-fx-background-color: transparent;">
                      <columnConstraints>
@@ -73,15 +73,18 @@
       <HBox alignment="CENTER_LEFT" prefHeight="64.0" BorderPane.alignment="CENTER">
          <children>
             <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-            <TextField fx:id="searchBar" onAction="#searchAction" prefHeight="32.0" prefWidth="500.0" promptText="Search" style="-fx-background-color: #f5f5f5; -fx-background-radius: 24;">
+            <TextField fx:id="searchBar" onAction="#searchAction" prefHeight="32.0" prefWidth="400.0" promptText="Search" style="-fx-background-color: #f5f5f5; -fx-background-radius: 24;">
                <HBox.margin>
-                  <Insets right="12.0" />
+                  <Insets right="40.0" />
                </HBox.margin></TextField>
             <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
          </children>
          <BorderPane.margin>
-            <Insets left="80.0" />
+            <Insets />
          </BorderPane.margin>
+         <padding>
+            <Insets left="120.0" />
+         </padding>
       </HBox>
    </top>
 </BorderPane>

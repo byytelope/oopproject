@@ -8,14 +8,15 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="500.0" style="-fx-background-radius: 24; -fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PostCardController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="700.0" style="-fx-background-radius: 24; -fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PostCardController">
    <children>
-      <VBox alignment="CENTER" minWidth="64.0" prefHeight="250.0" prefWidth="64.0" style="-fx-background-color: transparent;">
+      <VBox alignment="CENTER" minWidth="72.0" prefHeight="250.0" prefWidth="72.0" style="-fx-background-color: transparent;">
          <children>
-            <Button minHeight="48.0" minWidth="48.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #F4F1E3; -fx-background-radius: 100%;">
+            <Button fx:id="upvoteButton" minHeight="48.0" minWidth="48.0" mnemonicParsing="false" onAction="#upvoteAction" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #B9EBD4; -fx-background-radius: 100%;">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
                      <image>
@@ -25,13 +26,13 @@
                </graphic>
             </Button>
             <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+            <Text fx:id="votesText" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
             <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-            <Button layoutX="18.0" layoutY="111.0" minHeight="48.0" minWidth="48.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #F4F1E3; -fx-background-radius: 100%;">
+            <Button fx:id="downvoteButton" layoutX="18.0" layoutY="111.0" minHeight="48.0" minWidth="48.0" mnemonicParsing="false" onAction="#downvoteAction" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #F9BF7F; -fx-background-radius: 100%;">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
                      <image>
@@ -45,44 +46,59 @@
             <Insets bottom="12.0" top="12.0" />
          </HBox.margin>
       </VBox>
-      <VBox prefHeight="195.0" prefWidth="412.0" style="-fx-background-color: transparent;">
+      <VBox alignment="TOP_CENTER" prefHeight="276.0" prefWidth="630.0" style="-fx-background-color: transparent;">
          <HBox.margin>
             <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
          </HBox.margin>
          <children>
             <HBox alignment="CENTER_LEFT" prefWidth="200.0" VBox.vgrow="NEVER">
                <children>
-                  <Label prefHeight="23.0" prefWidth="229.0" text="This is a very long title bla bla bla">
+                  <Label fx:id="titleLabel" prefHeight="23.0" prefWidth="324.0" text="This is an example title for this post">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
                   <Region HBox.hgrow="ALWAYS" />
-                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="96.0" text="Author Name" textFill="#5e5e5e" />
+                  <Circle fx:id="authorAvatar" fill="#5e5e5e" radius="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                     <HBox.margin>
+                        <Insets right="6.0" />
+                     </HBox.margin>
+                  </Circle>
+                  <Text fx:id="authorNameText" fill="#5e5e5e" strokeType="OUTSIDE" strokeWidth="0.0" text="Author" />
                   <Label text=" · " textFill="#5e5e5e">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="338.0" layoutY="13.0" text="1.10.2022" textFill="#5e5e5e" />
+                  <Label fx:id="dateLabel" layoutX="338.0" layoutY="13.0" text="1.10.2022" textFill="#5e5e5e" />
                </children>
                <VBox.margin>
-                  <Insets bottom="12.0" right="12.0" />
+                  <Insets bottom="18.0" right="12.0" />
                </VBox.margin>
             </HBox>
-            <Label alignment="TOP_LEFT" lineSpacing="2.0" prefHeight="144.0" prefWidth="412.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." wrapText="true" />
+            <Label fx:id="contentLabel" alignment="TOP_LEFT" lineSpacing="2.0" prefHeight="410.0" prefWidth="604.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." wrapText="true" />
+            <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
             <HBox alignment="CENTER_LEFT" minHeight="48.0" prefHeight="48.0" prefWidth="412.0" spacing="12.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #F4F1E3; -fx-background-radius: 16;">
+                  <Button fx:id="viewButton" mnemonicParsing="false" onAction="#viewAction" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #F4F1E3; -fx-background-radius: 16;">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
                            <image>
-                              <Image url="@comment.png" />
+                              <Image url="@eye.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #F9BBB4; -fx-background-radius: 16;">
+                  <Button fx:id="editButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#editAction" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #F4F1E3; -fx-background-radius: 16;">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
+                           <image>
+                              <Image url="@pencil.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteAction" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #F9BBB4; -fx-background-radius: 16;">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
                            <image>

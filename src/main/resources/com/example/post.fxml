@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="1024.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PostController">
+   <top>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="24.0" />
+         </BorderPane.margin>
+         <children>
+            <Button fx:id="backButton" cancelButton="true" mnemonicParsing="false" onAction="#backAction" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #F4F1E3; -fx-background-radius: 6;">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
+                     <image>
+                        <Image url="@arrow_back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <ScrollPane fitToHeight="true" fitToWidth="true" maxWidth="700.0" prefWidth="700.0" style="-fx-background-color: #fff; -fx-background: #fff;" BorderPane.alignment="CENTER">
+         <content>
+            <VBox spacing="24.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Text fx:id="titleText" strokeType="OUTSIDE" strokeWidth="0.0" text="This is an example title for this post">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Circle fx:id="authorAvatar" fill="#5e5e5e" radius="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                           <HBox.margin>
+                              <Insets right="6.0" />
+                           </HBox.margin>
+                        </Circle>
+                        <Text fx:id="authorNameText" fill="#5e5e5e" strokeType="OUTSIDE" strokeWidth="0.0" text="Author" />
+                        <Text fill="#5e5e5e" layoutX="673.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  ·  ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="dateLabel" text="10.09.2022" textFill="#5e5e5e" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <Text fx:id="contentText" lineSpacing="6.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." wrappingWidth="700.0" />
+                  <HBox alignment="CENTER_LEFT" spacing="12.0">
+                     <children>
+                        <Button fx:id="upvoteButton" mnemonicParsing="false" onAction="#upvoteAction" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #B9EBD4; -fx-background-radius: 6;">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@arrow_up.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Text fx:id="votesText" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="downvoteButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#downvoteAction" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #F9BF7F; -fx-background-radius: 6;">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@arrow_down.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="editButton" layoutX="70.0" layoutY="10.0" mnemonicParsing="false" onAction="#editAction" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #F4F1E3; -fx-background-radius: 6;">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pencil.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="deleteButton" layoutX="70.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="48.0" prefWidth="48.0" style="-fx-background-color: #F9BBB4; -fx-background-radius: 6;">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@delete.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <TextField fx:id="commentField" prefHeight="32.0" promptText="Make a comment" style="-fx-background-color: #f5f5f5; -fx-background-radius: 6;" />
+               </children>
+            </VBox>
+         </content>
+         <padding>
+            <Insets right="1.0" />
+         </padding>
+      </ScrollPane>
+   </center>
+</BorderPane>
